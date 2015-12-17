@@ -12,8 +12,16 @@ class Enemy{
 		enemyImg = loadImage("img/enemy.png");
 		
 	}
+	
+	Enemy(int x, int y, int type, String filename) {
+		this.x = x;
+		this.y = y;
+		this.type = type;
+		enemyImg = loadImage(filename);
+	}
+
 	void move() {
-		this.x+= 5;	
+		this.x+= speed;	
 	}
 
 	void draw()
@@ -23,11 +31,15 @@ class Enemy{
 
 	boolean isCollideWithFighter()
 	{
+		if (isHit(x, y, 60, 60, fighter.x, fighter.y, 50, 50))
+			return true;
 		return false;
 	}
 
 	boolean isOutOfBorder()
 	{
+		if (x>640)
+			return true;
 		return false;
 	}
 
@@ -100,6 +112,7 @@ void addDiamondEnemy()
 void addEnemyStrong()
 {
 	for (int i = 0; i < 5; ++i) {
-		enemys[i] = new Enemy(0, 40+ i * 85, FlightType.ENEMYSTRONG);
+		enemys[i] = new Boss(0, 40+ i * 85, FlightType.ENEMYSTRONG);
+		bossCount[i] = 0;
 	}
 }
