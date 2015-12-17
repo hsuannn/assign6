@@ -1,5 +1,5 @@
 // Boss image is "img/enemy2.png" 
-class Boss{
+class Boss extends Enemy {
   Boss(int x, int y, int type) {
      super(x, y, type, "img/enemy2.png");
       speed = 2;
