@@ -32,7 +32,12 @@ class Fighter{
 	}
 
 	void shoot() {
-		
+		for (int i=0; i<10; i++) {
+			if (bullets[i]==null) {
+				bullets[i] = new Bullet(x, y+12);
+				break;
+			}
+		}
 	}
 
 	void move(int direct) {
