@@ -109,12 +109,10 @@ void draw()
         enemys[i].move();
         enemys[i].draw();
         if (enemys[i].isCollideWithFighter()) {
-          if (enemys[i].type==FlightType.ENEMYSTRONG) {
+          if (enemys[i].type==FlightType.ENEMYSTRONG) 
             fighter.hpValueChange(-50);
-          }
-          else {
+          else
             fighter.hpValueChange(-20);
-          }
           flameMgr.addFlame(enemys[i].x, enemys[i].y);
           enemys[i]=null;
         } else if (enemys[i].isOutOfBorder()) {
