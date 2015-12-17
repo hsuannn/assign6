@@ -43,7 +43,7 @@ boolean isMovingLeft;
 boolean isMovingRight;
 
 int time;
-int wait = 4000;
+int wait = 6000;
 int shottime;
 int shotwait = 50;
 
